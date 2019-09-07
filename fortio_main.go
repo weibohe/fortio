@@ -137,7 +137,7 @@ var (
 	doHealthFlag   = flag.Bool("health", false, "grpc ping client mode: use health instead of ping")
 	doPingLoadFlag = flag.Bool("ping", false, "grpc load test: use ping instead of health")
 	healthSvcFlag  = flag.String("healthservice", "", "which service string to pass to health check")
-	pingDelayFlag  = flag.Duration("grpc-ping-delay", 0, "grpc ping delay in response")
+	pingDelayFlag  = flag.String("grpc-ping-delay", "", "grpc ping delay in response")
 	pingErrorFlag  = flag.Int("grpc-ping-error", 0, "grpc ping error percentage")
 	streamsFlag    = flag.Int("s", 1, "Number of streams per grpc connection")
 
