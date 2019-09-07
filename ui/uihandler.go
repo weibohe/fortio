@@ -155,7 +155,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	jitter := (r.FormValue("jitter") == "on")
 	grpcSecure := (r.FormValue("grpc-secure") == "on")
 	grpcPing := (r.FormValue("ping") == "on")
-	grpcPingDelay, _ := time.ParseDuration(r.FormValue("grpc-ping-delay"))
+	grpcPingDelay := r.FormValue("grpc-ping-delay")
 	stdClient := (r.FormValue("stdclient") == "on")
 	httpsInsecure := (r.FormValue("https-insecure") == "on")
 	resolve := r.FormValue("resolve")
