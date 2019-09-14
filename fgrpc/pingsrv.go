@@ -65,14 +65,10 @@ func (s *pingSrv) Ping(c context.Context, in *PingMessage) (*PingMessage, error)
 }
 
 func shouldInjectError(errorRate int) bool {
-	rand.Seed(time.Now().UnixNano())
-	number := rand.Intn(100 + 1)
-	fail := false
-
-	if number < errorRate {
-		fail = true
+	if int(100.*rand.Float32()) < errorRate {
+		return true
 	}
-	return fail
+	return false
 }
 
 // PingServer starts a grpc ping (and health) echo server.
